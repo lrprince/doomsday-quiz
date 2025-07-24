@@ -95,7 +95,7 @@ def hint():
         if hint_year_doomsday > 6:
             hint_text = hint_text + f"\n    {hint_year_doomsday}%7="
             hint_year_doomsday %= 7
-            hint_text = hint_text + f"{hint_year_doomsday}."
+        hint_text = hint_text + f"{hint_year_doomsday} {weekdays[hint_year_doomsday]}."
         hint_text = hint_text + "\n    This is the year's doomsday"
         hint_step = 5
     elif hint_step == 5:
@@ -117,7 +117,7 @@ def hint():
         hint_step = 7
         day_str = "day" if abs(hint_month_doomsday-random_date.day) == 1 else "days"
         direction_str = "backward" if hint_month_doomsday-random_date.day > 0 else "forward"
-        if hint_month_doomsday == random_date.month:
+        if hint_month_doomsday == random_date.day:
             hint_text = hint_text + "\n7. That's the day we're checking. The answer is "
             answer = hint_year_doomsday
         else:
